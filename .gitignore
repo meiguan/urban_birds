@@ -130,3 +130,6 @@ dmypy.json
 
 # envir
 envir/
+
+# here
+.here
