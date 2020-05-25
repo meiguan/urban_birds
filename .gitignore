@@ -131,5 +131,7 @@ dmypy.json
 # envir
 envir/
 
-# here
+# R related files
 .here
+.Rhistory
+.Rdata
