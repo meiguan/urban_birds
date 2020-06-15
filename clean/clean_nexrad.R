@@ -10,7 +10,8 @@ setwd(HOME)
 Sys.setenv(TZ = "UTC")
 
 files <- c('KDIX2016night.RData', 'KDIX2017night.RData', 'KDIX2018night.RData', 'KDIX2019night.RData',
-          'KOKX2016night.RData', 'KOKX2017night.RData', 'KOKX2018night.RData', 'KOKX2019night.RData')
+          'KOKX2016night.RData', 'KOKX2017night.RData', 'KOKX2018night.RData', 'KOKX2019night.RData', 
+          'KOKX_spring_2020.RData', 'KDIX_spring_2020.RData')
 
 for (i in files){
     load(paste0("./share/data/", i))
