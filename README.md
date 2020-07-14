@@ -10,3 +10,20 @@ NYU CUSP Capstone group: Urban Dynamics of Bird Migration (Cornell Lab of Ornith
 
 ## Saving Data files
 When writing out data files, please start the file with the folder name where the data originates. For example, if this is a dataset from a jupyter notebook in the clean folder, then the dataset file name should be 'clean_xxx_data.csv'
+
+## Team Roles
+For this project, each member of the team will be engaging in all aspects of this capstone project from data wrangling to modeling to report writing. Since different team members have different strengths and interests, our team has identified leads in certain areas as listed below:
+
+- Project Manager - Mei
+- Lead on Weather Surveillance Data (NEXRAD) - Mei
+- Leads on Acoustic Data (SONYC)
+
+    - Temporal measures of sound pressure levels (SPL) from SONYC Sensors - Max
+    - Classification outputs from YAMNet for birds - Xin
+
+- Lead on Citizen Science Data (eBird) - Martha
+- Data Modeling - Mei & Xin
+- Website Development - Martha
+- Bird Content Knowledge - Max
+
+
