@@ -20,7 +20,7 @@ Sys.setenv(TZ = "UTC")
 check_docker()
 
 # data folder
-files <- list.files(path=paste0(HOME, "/nexrad_downloads/May20"))
+files <- list.files(path=paste0(HOME, "/nexrad_downloads/May3"))
 
 zoom15 <- list()
 
@@ -28,7 +28,7 @@ for (f in files){
   print(f)
   tryCatch(
     {
-    my_pvol <- read_pvolfile(paste0(HOME, "/nexrad_downloads/May20/",f))
+    my_pvol <- read_pvolfile(paste0(HOME, "/nexrad_downloads/May3/",f))
     minangle <-which.min(get_elevation_angles(my_pvol)) # get the lowest angle
     my_scan <- my_pvol$scans[[minangle]]
     my_ppi <- project_as_ppi(my_scan, ylim = c(40.575, 40.885), 
@@ -36,7 +36,7 @@ for (f in files){
     basemap <- download_basemap(my_ppi, maptype = "toner", alpha = 0.75)
     wsp <- map(my_ppi, map = basemap, param = "DBZH")
     zoom15[[f]] <- wsp
-    ggplot2::ggsave(paste0(HOME, "/nexrad_downloads/May20/plots/", f, ".png"))
+    ggplot2::ggsave(paste0(HOME, "/nexrad_downloads/May3/plots/", f, ".png"))
     }, error = function(e){
       print(e)
     }
