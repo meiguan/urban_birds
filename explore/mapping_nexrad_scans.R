@@ -20,20 +20,26 @@ Sys.setenv(TZ = "UTC")
 check_docker()
 
 # data folder
-files <- list.files(path=paste0(HOME, "/nexrad_downloads/May17"))
+files <- list.files(path=paste0(HOME, "/nexrad_downloads/May20"))
 
 zoom15 <- list()
 
 for (f in files){
   print(f)
-  my_pvol <- read_pvolfile(paste0(HOME, "/nexrad_downloads/May17/",f))
-  minangle <-which.min(get_elevation_angles(my_pvol)) # get the lowest angle
-  my_scan <- my_pvol$scans[[minangle]]
-  my_ppi <- project_as_ppi(my_scan, ylim = c(40.725, 40.740), 
-                           xlim = c(-74.017, -73.992)) # for zoom level 15
-  basemap <- download_basemap(my_ppi, maptype = "toner-lite", alpha = 0.75)
-  wsp <- map(my_ppi, map = basemap, param = "DBZH")
-  zoom15[[f]] <- wsp
-  ggplot2::ggsave(paste0(HOME, "/nexrad_downloads/May17/plots/", f, ".png"))
+  tryCatch(
+    {
+    my_pvol <- read_pvolfile(paste0(HOME, "/nexrad_downloads/May20/",f))
+    minangle <-which.min(get_elevation_angles(my_pvol)) # get the lowest angle
+    my_scan <- my_pvol$scans[[minangle]]
+    my_ppi <- project_as_ppi(my_scan, ylim = c(40.575, 40.885), 
+                             xlim = c(-74.152, -73.781)) # for zoom level 11
+    basemap <- download_basemap(my_ppi, maptype = "toner", alpha = 0.75)
+    wsp <- map(my_ppi, map = basemap, param = "DBZH")
+    zoom15[[f]] <- wsp
+    ggplot2::ggsave(paste0(HOME, "/nexrad_downloads/May20/plots/", f, ".png"))
+    }, error = function(e){
+      print(e)
+    }
+  ) 
   }
 
