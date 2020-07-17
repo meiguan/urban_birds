@@ -135,3 +135,7 @@ envir/
 .here
 .Rhistory
 .Rdata
+
+# Nexrad Downloads
+explore/nexrad_downloads/
+explore/fonts/
