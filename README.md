@@ -3,7 +3,7 @@ Github Repo: urban_birds
 
 NYU CUSP Capstone group: Urban Dynamics of Bird Migration (Cornell Lab of Ornithology)
 
-> Paper: [Sounds of Spring: Urban Noise and Bird Migration in Washington Square Park](www.authorea.com/471763/t6Ypp1w_mqa8DnfV2nMeYw)
+> [Our Paper](https://www.authorea.com/471763/t6Ypp1w_mqa8DnfV2nMeYw "Sounds of Spring: Urban Noise and Bird Migration in Washington Square Park")
 
 ## Folder Structure:
 1. *staging* - this is for the rawest of data, mostly to bring data into the environment
